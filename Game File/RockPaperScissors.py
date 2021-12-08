@@ -1,37 +1,37 @@
 #imports duh
-import random
-import os
-import sys
+import random, os, sys
 
 #Var for game
 cpuscore = 0
 userscore = 0
-totalgames = int("input(How many games of Rock Paper Scissors would you like to play?"))
+totalgames = int(input("How many games of Rock Paper Scissors!\n How many games would you like to play?"))
 userchoice = ""
 cpuchoice = ""
+userwin = False
 draw = False
-clear = lambada: os.system("cls")
+choice = ""
+clear =  lambda: os.system("cls")
 
 
 # random number chooser using importyyy random
 
 for x in range(0, totalgames):
-    randomnum = random.randit(1,3)
-if randomnum == 1:
-    cpuchoice = "rock"
-elif randomnum == 2:
-    cpuchoice = "paper"
-elif randomnum == 3:
-    cpuchoice == "scissors"
+    randomnum = random.randint(1,3)
+    if randomnum == 1:
+        cpuchoice = "rock"
+    elif randomnum == 2:
+        cpuchoice = "paper"
+    elif randomnum == 3:
+        cpuchoice == "scissors"
 
 
 #user input choices
 
-userchoice = input("Select Rock, Paper, or Scissors\n")
+    userchoice = input("Select Rock, Paper, or Scissors\n")
 
 
 #all user vs. cpu choices. win/lose
-if userchoice == "rock" and cpuchoice == "scissors":
+    if userchoice == "rock" and cpuchoice == "scissors":
         print("You selected",userchoice,"and the computer selected",cpuchoice,"You won this round!")
         userscore += 1
     elif userchoice == "rock" and cpuchoice == "paper":
@@ -60,11 +60,11 @@ elif userscore == cpuscore:
 # User win and lose final
 
 if userwin == True:
-    print("Congratulations, you won!\nYour score:",userscore,"\nComputer's score:",computerscore)
+    print("Congratulations, you won!\nYour score:",userscore,"\nComputer's score:",cpuscore)
 elif draw == True:
-    print("You drew!\nYour score:",userscore,"\nComputer's score:",computerscore)
+    print("You drew!\nYour score:",userscore,"\nComputer's score:",cpuscore)
 elif userwin == False:
-    print("I'm sorry, but you lost.\nYour score:",userscore,"\nComputer's score:",computerscore)
+    print("I'm sorry, but you lost.\nYour score:",userscore,"\nComputer's score:",cpuscore)
 
 
 #os and sys you will be able to restart the game
